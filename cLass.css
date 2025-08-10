@@ -1,0 +1,22 @@
+ /* Box style for layout blocks */
+        .box {
+            border: thin solid;
+            height: 100px;  /* Consider removing fixed height to allow content to grow */
+            margin: 10px;
+            display: flex;
+            padding: 10%;
+        }
+
+
+        /* Row container to arrange content in a row using Flexbox */
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        /* Optional small section title */
+        .small {
+            font-size: 16px;
+            font-weight: bold;
+        }

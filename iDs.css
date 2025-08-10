@@ -1,0 +1,28 @@
+        /* Header style */
+        #head {
+            text-align: center;
+            margin: auto;
+        }
+
+        /* Left column style (not used in this version, can remove) */
+        #left {
+            text-align: center;
+            margin: auto;
+            padding: 5%;
+            float: left;
+        }
+
+        /* Main body container style */
+        #content {
+            text-align: center;
+            margin: auto;
+            padding: 5%;
+            flex-direction: column;
+        }
+        
+        /* Navigation style placeholder (spelling corrected below) */
+        #navigation {
+            list-style: none;
+            padding: 10px;
+            text-align: left;
+        }

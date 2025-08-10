@@ -1,44 +1,174 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <title>WPE Journal</title>
+<html>
+<head>
+    <title>WPE Journal</title>
     <style>
-        #head{
-             text-align: center;  
-             margin: auto;  
-
-        }
-        #left{
-             text-align: center;  
-             margin: auto;
-             padding: 5%;
-             float: left;  
-        }
-        #body{
-             text-align: center;  
-             margin: auto;  
-             padding: 5%;
-        }
-        .box{
-                border: thin solid;
-               height:100px;
-               border-spacing:100px;
-        }
-        #navigattion{
+        /* === GLOBAL RESET === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #2d3436;
+        }
+        /* === LAYOUT CLASSES === */
+        .box {
+            border: thin solid #dcdde1;
+            padding: 20px;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+        .nav-panel {
+            width: 20%;
+            background-color: #6c5ce7;
+            color: white;
+        }
+        .main-content {
+            width: 80%;
+            background-color: #ffffff;
+        }
+        .small {
+            font-size: 18px;
+            font-weight: bold;
+            color: #6c5ce7;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        li:hover {
+            background-color: #00cec9;
+            cursor: pointer;
+        }
+        
+        /* === HEADER === */
+        
+        #head {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-bottom: 3px solid #6c5ce7;
+        }
+
+        #navigation {
+            height: 100%;
+        }
+
+        #content {
+            padding: 30px;
+        }
+
+        /* === FOOTER === */
+
+        footer {
+            background-color: #ffffff;
+            border-top: 3px solid #6c5ce7;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        footer .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #6c5ce7;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .nav-panel,
+            .main-content {
+                width: 100%;
+            }
+
+            footer .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-pic {
+                margin-bottom: 20px;
+            }
+        }
     </style>
-    </head>
-    <body>
-        <div id="head" class="box">
-            <h1>WPE Journal</h1>
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="head" class="box">
+        <h1>WPE Journal</h1>
+    </div>
+
+    <!-- Main Row Layout -->
+    <div class="row">
+        <!-- Navigation Sidebar -->
+        <div id="navigation" class="nav-panel box">
+            <ul class="links">
+                <li>Christ-Centeredness</li>
+                <li>Character</li>
+                <li>Culture</li>
+                <li>Community</li>
+                <li>Classroom</li>
+            </ul>
         </div>
-        <div id="navigation" class="box">
-            navigation
-            
+
+        <!-- Content Section -->
+        <div id="content" class="main-content box">
+            <div class="small">
+                <h1>Journal Content</h1>
+            </div>
+            <p> <!-- Optional content placeholder --> This is my GE10a journal website, this contains the my reflection on the events that are coinsides with the 5 cs of silliman </p>
         </div>
-        <div id= "body" class="box">
-            Body 
+    </div>
+
+    <!-- Footer with About Me Section -->
+    <footer class="box">
+        <div class="small">
+            <h1>About Me</h1>
         </div>
-    </body>
-    </html>
+        <div class="about-container">
+            <img src="your-photo.jpg" alt="Vern Andre A. Manayan" class="profile-pic">
+            <div class="about-text">
+                <p>
+                    I’m Vern Andre A. Manayan, 22 years old, born in November 2001. I am a BSIT student at Silliman University. There are six members in my family, and I have three siblings. I am the third child. I am originally from Oroquieta City, but due to my father’s work, we have moved from place to place. We lived in Pagadian City, then Cagayan de Oro, and finally Dumaguete City, where we have been living for 16 years. I studied at St. Paul University from grade school to junior high school, and finished my senior high school at Foundation Preparatory Academy.
+                </p>
+                <br>
+                <p>
+                    In my free time, I love to play computer games, mostly first-person shooters, strategy games, and MMORPGs. This is one of the reasons why I chose BSIT because of my interest in computer games. I also enjoy listening to music when I’m not playing video games, especially neo-metal, classic rock, and punk pop.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
