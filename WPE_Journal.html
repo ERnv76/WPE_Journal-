@@ -4,122 +4,49 @@
     <title>WPE Journal</title>
     <style>
         /* === GLOBAL RESET === */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f9;
             color: #2d3436;
         }
         /* === LAYOUT CLASSES === */
-        .box {
-            border: thin solid #dcdde1;
-            padding: 20px;
-        }
-        .row {
-            display: flex;
-            flex-direction: row;
-            align-items: stretch;
-        }
-        .nav-panel {
-            width: 20%;
-            background-color: #6c5ce7;
-            color: white;
-        }
-        .main-content {
-            width: 80%;
-            background-color: #ffffff;
-        }
-        .small {
-            font-size: 18px;
-            font-weight: bold;
-            color: #6c5ce7;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-
-        li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        li:hover {
-            background-color: #00cec9;
-            cursor: pointer;
-        }
-        
+        .box { border: thin solid #dcdde1; padding: 20px; }
+        .row { display: flex; flex-direction: row; align-items: stretch; }
+        .nav-panel { width: 20%; background-color: #6c5ce7; color: white; }
+        .main-content { width: 80%; background-color: #ffffff; }
+        .small { font-size: 18px; font-weight: bold; color: #6c5ce7; }
+        ul { list-style-type: none; padding-left: 20px; }
+        li { padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        li:hover { background-color: #00cec9; cursor: pointer; }
         /* === HEADER === */
-        
-        #head {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 20px;
-            border-bottom: 3px solid #6c5ce7;
-        }
-
-        #navigation {
-            height: 100%;
-        }
-
-        #content {
-            padding: 30px;
-        }
-
+        #head { text-align: center; background-color: #ffffff; padding: 20px; border-bottom: 3px solid #6c5ce7; }
+        #navigation { height: 100%; }
+        #content { padding: 30px; }
         /* === FOOTER === */
-
-        footer {
-            background-color: #ffffff;
-            border-top: 3px solid #6c5ce7;
-            padding: 30px;
-            margin-top: 20px;
-        }
-
-        footer .about-container {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: auto;
-            border-radius: 10px;
-            border: 2px solid #6c5ce7;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 200px;
-        }
-
+        footer { background-color: #ffffff; border-top: 3px solid #6c5ce7; padding: 30px; margin-top: 20px; }
+        footer .about-container { display: flex; flex-direction: row; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+        .profile-pic { width: 150px; height: auto; border-radius: 10px; border: 2px solid #6c5ce7; }
+        .about-text { flex: 1; min-width: 200px; }
         @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
-
-            .nav-panel,
-            .main-content {
-                width: 100%;
-            }
-
-            footer .about-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .profile-pic {
-                margin-bottom: 20px;
-            }
+            .row { flex-direction: column; }
+            .nav-panel, .main-content { width: 100%; }
+            footer .about-container { flex-direction: column; align-items: center; }
+            .profile-pic { margin-bottom: 20px; }
         }
+        a { color: white; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            background-color: #f4f4f9;
+            border-radius: 6px;
+        }
+        /* Dropdown for entries */
+        .entries { display: none; padding-left: 20px; background-color: rgba(255,255,255,0.1); }
+        .entries li { border-bottom: none; }
+        .entries li:hover { background-color: #00b894; }
     </style>
 </head>
 <body>
@@ -134,28 +61,78 @@
         <!-- Navigation Sidebar -->
         <div id="navigation" class="nav-panel box">
             <ul class="links">
-                <li>Christ-Centeredness</li>
-                <li>Character</li>
-                <li>Culture</li>
-                <li>Community</li>
-                <li>Classroom</li>
+                <li onclick="toggleEntries('ccs', 'ccs-default.html')">Church</li>
+                <ul id="ccs" class="entries">
+                    <li onclick="loadPage('ccs-entry1.html')">Entry 1</li>
+                    <li onclick="loadPage('ccs-entry2.html')">Entry 2</li>
+                    <li onclick="loadPage('ccs-entry3.html')">Entry 3</li>
+                    <li onclick="loadPage('ccs-entry4.html')">Entry 4</li>
+                    <li onclick="loadPage('ccs-entry5.html')">Entry 5</li>
+                    <li onclick="loadPage('ccs-entry6.html')">Entry 6</li>
+                    <li onclick="loadPage('ccs-entry7.html')">Entry 7</li>
+                    <li onclick="loadPage('ccs-entry8.html')">Entry 8</li>
+                </ul>
+
+                <li onclick="toggleEntries('character', 'character-default.html')">Classroom</li>
+                <ul id="character" class="entries">
+                    <li onclick="loadPage('character-entry1.html')">Entry 1</li>
+                    <li onclick="loadPage('character-entry2.html')">Entry 2</li>
+                    <li onclick="loadPage('character-entry3.html')">Entry 3</li>
+                    <li onclick="loadPage('character-entry4.html')">Entry 4</li>
+                    <li onclick="loadPage('character-entry5.html')">Entry 5</li>
+                    <li onclick="loadPage('character-entry6.html')">Entry 6</li>
+                    <li onclick="loadPage('character-entry7.html')">Entry 7</li>
+                    <li onclick="loadPage('character-entry8.html')">Entry 8</li>
+                </ul>
+                 
+                <li onclick="toggleEntries('classroom', 'classroom-default.html')">Court</li>
+                <ul id="classroom" class="entries">
+                    <li onclick="loadPage('classroom-entry1.html')">Entry 1</li>
+                    <li onclick="loadPage('classroom-entry2.html')">Entry 2</li>
+                    <li onclick="loadPage('classroom-entry3.html')">Entry 3</li>
+                    <li onclick="loadPage('classroom-entry4.html')">Entry 4</li>
+                    <li onclick="loadPage('classroom-entry5.html')">Entry 5</li>
+                    <li onclick="loadPage('classroom-entry6.html')">Entry 6</li>
+                    <li onclick="loadPage('classroom-entry7.html')">Entry 7</li>
+                    <li onclick="loadPage('classroom-entry8.html')">Entry 8</li>
+                </ul>
+
+                <li onclick="toggleEntries('culture', 'culture.html')">Culture</li>
+                <ul id="culture" class="entries">
+                    <li onclick="loadPage('Acquaintance.html')">Acquaintance</li>
+                    <li onclick="loadPage('ArawNgTabo.html')">Araw ng tabo</li>
+                    <li onclick="loadPage('culture-entry3.html')">Entry 3</li>
+                    <li onclick="loadPage('culture-entry4.html')">Entry 4</li>
+                    <li onclick="loadPage('culture-entry5.html')">Entry 5</li>
+                    <li onclick="loadPage('culture-entry6.html')">Entry 6</li>
+                    <li onclick="loadPage('culture-entry7.html')">Entry 7</li>
+                    <li onclick="loadPage('culture-entry8.html')">Entry 8</li>
+                </ul>
+
+                <li onclick="toggleEntries('community', 'community-default.html')">Community</li>
+                <ul id="community" class="entries">
+                    <li onclick="loadPage('community-entry1.html')">Entry 1</li>
+                    <li onclick="loadPage('community-entry2.html')">Entry 2</li>
+                    <li onclick="loadPage('community-entry3.html')">Entry 3</li>
+                    <li onclick="loadPage('community-entry4.html')">Entry 4</li>
+                    <li onclick="loadPage('community-entry5.html')">Entry 5</li>
+                    <li onclick="loadPage('community-entry6.html')">Entry 6</li>
+                    <li onclick="loadPage('community-entry7.html')">Entry 7</li>
+                    <li onclick="loadPage('community-entry8.html')">Entry 8</li>
+                </ul>
+                <li onclick="loadPage('about.html')">About</li>
             </ul>
         </div>
 
         <!-- Content Section -->
         <div id="content" class="main-content box">
-            <div class="small">
-                <h1>Journal Content</h1>
-            </div>
-            <p> <!-- Optional content placeholder --> This is my GE10a journal website, this contains the my reflection on the events that are coinsides with the 5 cs of silliman </p>
+            <iframe id="contentFrame" src="about.html" title="Journal Content"></iframe>
         </div>
     </div>
 
-    <!-- Footer with About Me Section -->
+    <!-- Footer -->
     <footer class="box">
-        <div class="small">
-            <h1>About Me</h1>
-        </div>
+        <div class="small"><h1>About Me</h1></div>
         <div class="about-container">
             <img src="your-photo.jpg" alt="Vern Andre A. Manayan" class="profile-pic">
             <div class="about-text">
@@ -169,6 +146,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleEntries(id, defaultPage) {
+            const entries = document.getElementById(id);
+            const all = document.querySelectorAll('.entries');
+            all.forEach(e => { if (e !== entries) e.style.display = 'none'; });
+            entries.style.display = entries.style.display === 'block' ? 'none' : 'block';
+            loadPage(defaultPage);
+        }
+        function loadPage(page) {
+            document.getElementById('contentFrame').src = page;
+        }
+    </script>
+
 </body>
 </html>
-
